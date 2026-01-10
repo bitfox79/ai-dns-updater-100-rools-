@@ -77,7 +77,7 @@ api.anthropic.com
 
 ---
 
-#### 2. Файл `update_rules.py`
+#### 2. Файл `update_rules.py` ОТРЕДАКТИРОВАННЫЙ НИЖЕ
 
 Создай этот файл и вставь туда этот «умный» код. Он сначала обработает твой список выше, а потом доберет новинки из интернета по ключевым словам.
 
@@ -197,3 +197,96 @@ jobs:
 **Если захочешь добавить новый домен:** просто допиши его в `custom_domains.txt` на GitHub, нажми "Save" и снова нажми **Run workflow**. Робот всё пересоберет за тебя!
 
 Нужно подсказать, как именно в GitHub создать папку с точкой `.github`, или ты знаешь? (Там нужно просто вводить название папки со слэшем, например: `.github/workflows/main.yml`)
+
+Отличное замечание! В классических файлах `hosts` адрес `0.0.0.0` используется для того, чтобы «заглушить» (заблокировать) рекламные домены или трекеры. Если мы пропустим их через прокси, то вместо блокировки рекламы мы просто начнем её загружать через разблокировщик, что нам совсем не нужно.
+
+Давай внесем это исправление в скрипт `update_rules.py`. Мы добавим условие: если строка начинается на `0.0.0.0`, мы её полностью игнорируем.
+
+### Обновленный код для `update_rules.py`
+
+Замени содержимое файла этим кодом:
+
+```python
+import requests
+import os
+
+# Настройки
+SOURCE_URL = "https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts"
+PROXY_IP = "185.87.51.182"
+CUSTOM_FILE = "custom_domains.txt"
+OUTPUT_FILE = "my_ready_rules.txt"
+
+# Ключевые слова для авто-поиска
+KEYWORDS = [
+    "openai", "chatgpt", "oaistatic", "oaiusercontent", "sora.com", 
+    "google", "gemini", "googleapis", "withgoogle", "pki.goog", "notebooklm", 
+    "claude", "anthropic", "grok", "x.ai", "deepl"
+]
+
+def main():
+    unique_domains = set()
+    result = ["! Сгенерировано автоматически: AI Unlocker", "! Игнорирует 0.0.0.0 (рекламные блокировки)", ""]
+
+    # 1. Сначала берем домены из твоего личного файла custom_domains.txt
+    result.append("! --- Личный список (custom_domains.txt) ---")
+    if os.path.exists(CUSTOM_FILE):
+        with open(CUSTOM_FILE, "r", encoding="utf-8") as f:
+            for line in f:
+                domain = line.strip().lower()
+                # Пропускаем комментарии и технический мусор
+                if domain and not domain.startswith(('#', '!', '0.0.0.0')):
+                    if domain not in unique_domains:
+                        unique_domains.add(domain)
+                        result.append(f"||{domain}^$dnsrewrite={PROXY_IP}")
+    
+    # 2. Затем добираем из интернета новинки
+    try:
+        response = requests.get(SOURCE_URL)
+        if response.status_code == 200:
+            result.append("\n! --- Авто-дополнение из интернета ---")
+            lines = response.text.splitlines()
+            for line in lines:
+                line = line.strip().lower()
+                
+                # ГЛАВНОЕ УЛУЧШЕНИЕ: Игнорируем блокировщики (0.0.0.0) и комментарии
+                if not line or line.startswith(('#', '0.0.0.0')):
+                    continue
+                
+                parts = line.split()
+                if len(parts) >= 2:
+                    # Домен всегда идет последним словом в строке
+                    domain = parts[-1].replace("http://", "").replace("https://", "").split('/')[0]
+                    
+                    # Проверяем по ключевым словам
+                    if any(key in domain for key in KEYWORDS):
+                        if domain not in unique_domains:
+                            unique_domains.add(domain)
+                            result.append(f"||{domain}^$dnsrewrite={PROXY_IP}")
+    except Exception as e:
+        print(f"Ошибка сети: {e}")
+
+    # 3. Сохраняем итоговый файл
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(result))
+    print(f"Успешно! Собрано {len(unique_domains)} доменов.")
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### Что изменилось:
+
+* В строке `if not line or line.startswith(('#', '0.0.0.0')):` я добавил проверку на `0.0.0.0`.
+* Теперь, если скрипт видит что-то вроде `0.0.0.0 analytics.google.com`, он просто перешагнет через эту строку, потому что она предназначена для блокировки рекламы, а не для работы сервиса.
+
+### Как обновить:
+
+1. Зайди в свой репозиторий на GitHub.
+2. Открой файл `update_rules.py`.
+3. Нажми на иконку **карандаша** (Edit).
+4. Сотри старый код, вставь этот новый.
+5. Нажми **Commit changes**.
+6. Перейди во вкладку **Actions** и снова нажми **Run workflow**, чтобы пересобрать список.
+
+**Есть ли еще какие-то строки в исходном списке, которые показались тебе подозрительными или лишними?**
