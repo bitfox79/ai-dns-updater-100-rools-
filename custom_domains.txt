@@ -26,8 +26,6 @@ webrtc.chatgpt.com
 android.chat.openai.com
 api.openai.com
 operator.chatgpt.com
-sora.chatgpt.com
-sora.com
 videos.openai.com
 ios.chat.openai.com
 grok.com
