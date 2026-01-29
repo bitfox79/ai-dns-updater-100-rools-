@@ -1,5 +1,5 @@
 ! AI Unlocker Rules (Custom List)
-! Обновлено: 28.01.2026 05:27:04
+! Обновлено: 29.01.2026 05:42:10
 ! --- DEEPL ---, --- GOOGLE ---, --- GROK ---, --- OPENAI ---, --- OTHER ---
 ! Активных правил: 100
 ||ab.chatgpt.com^$dnsrewrite=95.182.120.241
