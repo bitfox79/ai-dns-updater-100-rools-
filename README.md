@@ -1,5 +1,5 @@
 # ai-dns-updater
-#### Ссылка на правила (обновляются каждый день): https://raw.githubusercontent.com/bitfox79/ai-dns-updater/refs/heads/main/my_ready_rules.txt
+#### Ссылка на правила (обновляются каждый день): https://raw.githubusercontent.com/bitfox79/ai-dns-updater-100-rools-/refs/heads/main/my_ready_rules.txt
 Конечно! Давай соберем всё воедино. Теперь у тебя будет четкий план действий и готовый код.
 
 ### 📝 Твой план действий в репозитории GitHub:
