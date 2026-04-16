@@ -1,7 +1,116 @@
 ! AI Unlocker Rules (Custom List)
-! Обновлено: 16.04.2026 06:55:59
-! --- DEEPL ---, --- GOOGLE ---, --- GROK ---, --- OPENAI ---, --- OTHER ---
-! Активных правил: 100
+! Обновлено: 16.04.2026 21:12:41
+! Сервисы: DEEPL, GOOGLE, GROK, OPENAI, OTHER
+! Доменов с двумя IP: 100 | с одним IP: 0 | не найдено: 4
+! Всего правил в каждом списке: 100
+!
+! ============================================================
+! СПИСОК 1 — PRIMARY IP (первый адрес)
+! ============================================================
+||ab.chatgpt.com^$dnsrewrite=45.155.204.190
+||accounts.x.ai^$dnsrewrite=45.155.204.190
+||ai.google.dev^$dnsrewrite=45.155.204.190
+||aisandbox-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||aistudio.google.com^$dnsrewrite=45.155.204.190
+||aitestkitchen.withgoogle.com^$dnsrewrite=45.155.204.190
+||alkalicore-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||alkalimakersuite-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||android.chat.openai.com^$dnsrewrite=45.155.204.190
+||api.openai.com^$dnsrewrite=45.155.204.190
+||apis.google.com^$dnsrewrite=45.155.204.190
+||appcatalyst.pa.googleapis.com^$dnsrewrite=45.155.204.190
+||asia-south1-livekit.grok.com^$dnsrewrite=45.155.204.190
+||assets.grok.com^$dnsrewrite=45.155.204.190
+||assets.x.ai^$dnsrewrite=45.155.204.190
+||assistant-s3-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||auth.deepl.com^$dnsrewrite=45.155.204.190
+||auth.openai.com^$dnsrewrite=45.155.204.190
+||auth0.openai.com^$dnsrewrite=45.155.204.190
+||backend.deepl.com^$dnsrewrite=45.155.204.190
+||beta.api.openai.com^$dnsrewrite=45.155.204.190
+||cdn.auth0.com^$dnsrewrite=45.155.204.190
+||cdn.oaistatic.com^$dnsrewrite=45.155.204.190
+||cdn.openai.com^$dnsrewrite=45.155.204.190
+||chatgpt.com^$dnsrewrite=45.155.204.190
+||clearance.deepl.com^$dnsrewrite=45.155.204.190
+||contest.openai.com^$dnsrewrite=45.155.204.190
+||daily-cloudcode-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||data.x.ai^$dnsrewrite=45.155.204.190
+||deepl.com^$dnsrewrite=45.155.204.190
+||deepmind.com^$dnsrewrite=45.155.204.190
+||deepmind.google^$dnsrewrite=45.155.204.190
+||deferred-chat.x.ai^$dnsrewrite=45.155.204.190
+||developerprofiles-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||dict-audio.deepl.com^$dnsrewrite=45.155.204.190
+||dict.deepl.com^$dnsrewrite=45.155.204.190
+||eu-west-1.api.x.ai^$dnsrewrite=45.155.204.190
+||experimentation-grpc.deepl.com^$dnsrewrite=45.155.204.190
+||experimentation.deepl.com^$dnsrewrite=45.155.204.190
+||files.oaiusercontent.com^$dnsrewrite=45.155.204.190
+||geller-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||gemini.google.com^$dnsrewrite=45.155.204.190
+||gemini.google^$dnsrewrite=45.155.204.190
+||generativeai.google^$dnsrewrite=45.155.204.190
+||generativelanguage.googleapis.com^$dnsrewrite=45.155.204.190
+||grok.com^$dnsrewrite=45.155.204.190
+||grok.x.ai^$dnsrewrite=45.155.204.190
+||imgen.x.ai^$dnsrewrite=45.155.204.190
+||ita-free.app.deepl.com^$dnsrewrite=45.155.204.190
+||ita-free.www.deepl.com^$dnsrewrite=45.155.204.190
+||jf.x.ai^$dnsrewrite=45.155.204.190
+||jukebox.openai.com^$dnsrewrite=45.155.204.190
+||jules.google.com^$dnsrewrite=45.155.204.190
+||jules.google^$dnsrewrite=45.155.204.190
+||labs.google.com^$dnsrewrite=45.155.204.190
+||labs.google^$dnsrewrite=45.155.204.190
+||labs.openai.com^$dnsrewrite=45.155.204.190
+||livekit.grok.com^$dnsrewrite=45.155.204.190
+||login-wall.deepl.com^$dnsrewrite=45.155.204.190
+||login.x.ai^$dnsrewrite=45.155.204.190
+||lookerstudio.google.com^$dnsrewrite=45.155.204.190
+||notebooklm-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||notebooklm.google.com^$dnsrewrite=45.155.204.190
+||notebooklm.google^$dnsrewrite=45.155.204.190
+||o.pki.goog^$dnsrewrite=45.155.204.190
+||oaistatic.com^$dnsrewrite=45.155.204.190
+||oneshot-free.www.deepl.com^$dnsrewrite=45.155.204.190
+||opal.google.com^$dnsrewrite=45.155.204.190
+||opal.google^$dnsrewrite=45.155.204.190
+||opal.withgoogle.com^$dnsrewrite=45.155.204.190
+||openai.com^$dnsrewrite=45.155.204.190
+||operator.chatgpt.com^$dnsrewrite=45.155.204.190
+||ott.deepl.com^$dnsrewrite=45.155.204.190
+||people-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||platform.api.openai.com^$dnsrewrite=45.155.204.190
+||platform.openai.com^$dnsrewrite=45.155.204.190
+||proactivebackend-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||robinfrontend-pa.googleapis.com^$dnsrewrite=45.155.204.190
+||s.deepl.com^$dnsrewrite=45.155.204.190
+||shield.deepl.com^$dnsrewrite=45.155.204.190
+||signaler-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||ssff.grok.com^$dnsrewrite=45.155.204.190
+||static.deepl.com^$dnsrewrite=45.155.204.190
+||stitch.withgoogle.com^$dnsrewrite=45.155.204.190
+||suggestqueries.google.com^$dnsrewrite=45.155.204.190
+||tcr9i.chat.openai.com^$dnsrewrite=45.155.204.190
+||transcription.grok-v2.x.ai^$dnsrewrite=45.155.204.190
+||typeahead.grok.com^$dnsrewrite=45.155.204.190
+||us-east-4-raw.api.x.ai^$dnsrewrite=45.155.204.190
+||us-south-1-pltr.api.x.ai^$dnsrewrite=45.155.204.190
+||us-west-1-raw.api.x.ai^$dnsrewrite=45.155.204.190
+||waa-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||webchannel-alkalimakersuite-pa.clients6.google.com^$dnsrewrite=45.155.204.190
+||webrtc.chatgpt.com^$dnsrewrite=45.155.204.190
+||write-free.www.deepl.com^$dnsrewrite=45.155.204.190
+||www.chatgpt.com^$dnsrewrite=45.155.204.190
+||www.deepl.com^$dnsrewrite=45.155.204.190
+||www.grok.com^$dnsrewrite=45.155.204.190
+||www.openai.com^$dnsrewrite=45.155.204.190
+||www.x.ai^$dnsrewrite=45.155.204.190
+!
+! ============================================================
+! СПИСОК 2 — SECONDARY IP (второй адрес, или первый если один)
+! ============================================================
 ||ab.chatgpt.com^$dnsrewrite=37.230.192.51
 ||accounts.x.ai^$dnsrewrite=37.230.192.51
 ||ai.google.dev^$dnsrewrite=37.230.192.51
